@@ -1,6 +1,32 @@
 import 'dart:io';
 
 class LangControls {
+  changeLang() {
+    while (true) {
+      print("""
+      ___________________
+      |Categories        |
+      |1.UzCategory      |
+      |2.RusCategory     |
+      |3.IngCategory     |
+      |0.exit            |
+      -------------------
+      """);
+
+      stdout.write("Select from menu: ");
+      String s = stdin.readLineSync() ?? "";
+      if (s == "0") break;
+
+      switch (s) {
+        case "1":
+          Uzb();
+        case "2":
+          Rus();
+        case "3":
+          Eng();
+      }
+    }
+  }
 }
 enum UzCategory {
   saladlar,
